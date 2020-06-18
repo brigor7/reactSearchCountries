@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Countries from './components/Countries/Countries';
 
 export default class App extends Component {
   constructor() {
@@ -36,11 +37,7 @@ export default class App extends Component {
     return (
       <div className="container">
         <h3>Search of Countries</h3>
-        <ul>
-          {allCountries.map((country) => {
-            return <li key={country.id}>{country.namePT}</li>;
-          })}
-        </ul>
+        <Countries countries={allCountries} />
       </div>
     );
   }
