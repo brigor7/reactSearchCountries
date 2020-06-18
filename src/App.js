@@ -77,7 +77,6 @@ export default class App extends Component {
             />
           </div>
           <div className="col s7">
-            <h4>Details of Country</h4>
             <InfoCountry filter={filteredCountry} />
           </div>
         </div>

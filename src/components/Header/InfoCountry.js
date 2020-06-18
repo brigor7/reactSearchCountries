@@ -6,16 +6,19 @@ export default class InfoCountry extends Component {
     return filter.map((country) => {
       return (
         <div>
-          <label>"Country´s name"</label>
+          <h4>Details of Country</h4>
+          <label>Country´s name:</label>
           <input type="text" disabled value={country.name} />
-          <label>"Capital"</label>
+          <label>Capital:</label>
           <input type="text" disabled value={country.capital} />
-          <label>"Population"</label>
+          <label>Population:</label>
           <input type="text" disabled value={country.population} />
-          <label>"Region"</label>
+          <label>Region:</label>
           <input type="text" disabled value={country.region} />
-          <label>"Subregion"</label>
+          <label>Subregion:</label>
           <input type="text" disabled value={country.subregion} />
+          <label>Languages:</label>
+          <input type="text" disabled value={country.languages} />
         </div>
       );
     });
