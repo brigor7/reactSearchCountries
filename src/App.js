@@ -9,6 +9,7 @@ export default class App extends Component {
     this.state = {
       allCountries: [],
       filteredCountries: [],
+      filteredCountry: [],
       filter: '',
     };
   }
@@ -49,6 +50,15 @@ export default class App extends Component {
     });
   };
 
+  handleClick = (event) => {
+    const { allCountries } = this.state;
+    const filteredCountry = allCountries.filter((country) => {
+      return country.id == event.target.id;
+    });
+    console.log(filteredCountry);
+    this.setState({ filteredCountry });
+  };
+
   render() {
     const { filter, filteredCountries } = this.state;
     return (
@@ -60,7 +70,10 @@ export default class App extends Component {
         <div className="row">
           <div className="col s5">
             <h4>List of Countries</h4>
-            <Countries countries={filteredCountries} />
+            <Countries
+              countries={filteredCountries}
+              onClickCountry={this.handleClick}
+            />
           </div>
           <div className="col s7">
             <h4>Details of Country</h4>

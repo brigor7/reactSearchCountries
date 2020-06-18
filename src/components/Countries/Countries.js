@@ -2,11 +2,15 @@ import React, { Component } from 'react';
 import Country from './Country';
 
 export default class Countries extends Component {
+  handleClick = (event) => {
+    this.props.onClickCountry(event);
+  };
+
   render() {
-    const { countries } = this.props;
+    const { countries, onClickCountry } = this.props;
     return (
       <ul>
-        <Country countries={countries} />
+        <Country countries={countries} onClickCountry={this.handleClick} />
       </ul>
     );
   }
