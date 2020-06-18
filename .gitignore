@@ -23,4 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 
 #others
-.roteiro.txt
+src/roteiro.txt
+.gitignore
+.gitignore
