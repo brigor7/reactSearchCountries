@@ -40,6 +40,10 @@ export default class App extends Component {
           <h3>Search and information of countries in the world</h3>
         </div>
         <div className="row">
+          <label for="nameCountry">Country´s name:</label>
+          <input type="text" id="nameCountry" />
+        </div>
+        <div className="row">
           <div className="col s5">
             <h4>List of Countries</h4>
             <Countries countries={allCountries} />
