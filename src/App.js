@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Countries from './components/Countries/Countries';
+import Header from './components/Header/Header';
 
 export default class App extends Component {
   constructor() {
@@ -8,6 +9,7 @@ export default class App extends Component {
     this.state = {
       allCountries: [],
       filteredCountries: [],
+      filter: '',
     };
   }
   async componentDidMount() {
@@ -34,11 +36,13 @@ export default class App extends Component {
     });
   }
 
-  handleChangeInput = (event) => {
+  handleChangeFilter = (event) => {
+    this.setState({ filter: event.target.value });
     const { allCountries } = this.state;
-    const digtCountry = event.target.value.toLowerCase();
+    const text = event.target.value;
+
     const filteredCountries = allCountries.filter((country) => {
-      return country.name.toLowerCase().includes(digtCountry);
+      return country.name.toLowerCase().includes(text.toLowerCase());
     });
     this.setState({
       filteredCountries,
@@ -46,20 +50,13 @@ export default class App extends Component {
   };
 
   render() {
-    const { allCountries, filteredCountries } = this.state;
+    const { filter, filteredCountries } = this.state;
     return (
       <div className="container">
         <div class="row">
           <h3>Search and information of countries in the world</h3>
         </div>
-        <div className="row">
-          <label for="nameCountry">Country´s name:</label>
-          <input
-            type="text"
-            id="nameCountry"
-            onChange={this.handleChangeInput}
-          />
-        </div>
+        <Header filter={filter} onChangeFilter={this.handleChangeFilter} />
         <div className="row">
           <div className="col s5">
             <h4>List of Countries</h4>

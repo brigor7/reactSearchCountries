@@ -7,7 +7,7 @@ export default class Country extends Component {
     return countries.map((country) => {
       return (
         <li className={css.flexRow} key={country.id}>
-          <img className={css.avatar} src={country.flag} />
+          <img className={css.avatar} src={country.flag} alt={country.name} />
           {country.namePT}
         </li>
       );
