@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Countries from './components/Countries/Countries';
 import Header from './components/Header/Header';
+import InfoCountry from './components/Header/InfoCountry';
 
 export default class App extends Component {
   constructor() {
@@ -53,17 +54,17 @@ export default class App extends Component {
   handleClick = (event) => {
     const { allCountries } = this.state;
     const filteredCountry = allCountries.filter((country) => {
-      return country.id == event.target.id;
+      return country.id === event.target.id;
     });
     console.log(filteredCountry);
     this.setState({ filteredCountry });
   };
 
   render() {
-    const { filter, filteredCountries } = this.state;
+    const { filter, filteredCountries, filteredCountry } = this.state;
     return (
       <div className="container">
-        <div class="row">
+        <div className="row">
           <h3>Search and information of countries in the world</h3>
         </div>
         <Header filter={filter} onChangeFilter={this.handleChangeFilter} />
@@ -77,6 +78,15 @@ export default class App extends Component {
           </div>
           <div className="col s7">
             <h4>Details of Country</h4>
+            <img src={filteredCountry.flag} alt={filteredCountry.name} />
+            <InfoCountry label="Country´s name:" value={filteredCountry.name} />
+            <InfoCountry label="Capital:" value={filteredCountry.capital} />
+            <InfoCountry
+              label="Population:"
+              value={filteredCountry.population}
+            />
+            <InfoCountry label="Region:" value={filteredCountry.region} />
+            <InfoCountry label="Subregion:" value={filteredCountry.subregion} />
           </div>
         </div>
       </div>

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 export default class Header extends Component {
   handleInputChange = (event) => {
-    const newText = event.target.value;
     this.props.onChangeFilter(event);
   };
 
@@ -10,7 +9,7 @@ export default class Header extends Component {
     const { filter } = this.props;
     return (
       <div className="row">
-        <label for="nameCountry">Country´s name:</label>
+        <label>Country´s name:</label>
         <input
           type="text"
           id="nameCountry"

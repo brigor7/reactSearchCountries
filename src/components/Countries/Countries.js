@@ -7,7 +7,7 @@ export default class Countries extends Component {
   };
 
   render() {
-    const { countries, onClickCountry } = this.props;
+    const { countries } = this.props;
     return (
       <ul>
         <Country countries={countries} onClickCountry={this.handleClick} />
