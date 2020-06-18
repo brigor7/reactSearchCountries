@@ -36,8 +36,18 @@ export default class App extends Component {
     const { allCountries } = this.state;
     return (
       <div className="container">
-        <h3>Search of Countries</h3>
-        <Countries countries={allCountries} />
+        <div class="row">
+          <h3>Search and information of countries in the world</h3>
+        </div>
+        <div className="row">
+          <div className="col s5">
+            <h4>List of Countries</h4>
+            <Countries countries={allCountries} />
+          </div>
+          <div className="col s7">
+            <h4>Details of Country</h4>
+          </div>
+        </div>
       </div>
     );
   }
