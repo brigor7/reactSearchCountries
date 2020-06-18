@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import css from '../Countries/country.module.css';
 import { formatNumber } from '../../helpers/formatHelpers';
 

@@ -17,7 +17,7 @@ export default class Country extends Component {
           onClick={this.handleClick}
         >
           <img className={css.avatar} src={country.flag} alt={country.name} />
-          {country.namePT}
+          {country.name}
         </li>
       );
     });

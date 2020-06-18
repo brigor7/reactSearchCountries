@@ -22,7 +22,6 @@ export default class App extends Component {
       return {
         id: country.numericCode,
         name: country.name,
-        namePT: country.translations.pt,
         flag: country.flag,
         capital: country.capital,
         population: country.population,
@@ -61,7 +60,6 @@ export default class App extends Component {
 
   render() {
     const { filter, filteredCountries, filteredCountry } = this.state;
-    const { name, capital, population, region, subregion } = filteredCountry;
     return (
       <div className="container">
         <div className="row">
