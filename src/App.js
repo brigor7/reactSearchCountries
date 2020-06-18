@@ -67,14 +67,14 @@ export default class App extends Component {
         </div>
         <Header filter={filter} onChangeFilter={this.handleChangeFilter} />
         <div className="row">
-          <div className="col s5">
+          <div className="col s12 m5">
             <h4>List of Countries</h4>
             <Countries
               countries={filteredCountries}
               onClickCountry={this.handleClick}
             />
           </div>
-          <div className="col s7">
+          <div className="col s12 m7">
             <InfoCountry filter={filteredCountry} />
           </div>
         </div>
