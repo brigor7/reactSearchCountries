@@ -56,12 +56,12 @@ export default class App extends Component {
     const filteredCountry = allCountries.filter((country) => {
       return country.id === event.target.id;
     });
-    console.log(filteredCountry);
     this.setState({ filteredCountry });
   };
 
   render() {
     const { filter, filteredCountries, filteredCountry } = this.state;
+    const { name, capital, population, region, subregion } = filteredCountry;
     return (
       <div className="container">
         <div className="row">
@@ -78,15 +78,7 @@ export default class App extends Component {
           </div>
           <div className="col s7">
             <h4>Details of Country</h4>
-            <img src={filteredCountry.flag} alt={filteredCountry.name} />
-            <InfoCountry label="Country´s name:" value={filteredCountry.name} />
-            <InfoCountry label="Capital:" value={filteredCountry.capital} />
-            <InfoCountry
-              label="Population:"
-              value={filteredCountry.population}
-            />
-            <InfoCountry label="Region:" value={filteredCountry.region} />
-            <InfoCountry label="Subregion:" value={filteredCountry.subregion} />
+            <InfoCountry filter={filteredCountry} />
           </div>
         </div>
       </div>
