@@ -7,7 +7,7 @@ export default class InfoCountry extends Component {
     const language = countryLanguages.reduce((acc, curr) => {
       return acc + curr.name + ', ';
     }, 0);
-    return language;
+    return language.replace('0', '');
   };
 
   render() {
@@ -21,23 +21,23 @@ export default class InfoCountry extends Component {
           </span>
           <br />
           <label>Country´s name:</label>
-          <input type="text" disabled value={country.name} />
+          <input type="text" readOnly value={country.name} />
           <label>Capital:</label>
-          <input type="text" disabled value={country.capital} />
+          <input type="text" readOnly value={country.capital} />
           <label>Population:</label>
           <input
             type="text"
-            disabled
+            readOnly
             value={formatNumber(country.population)}
           />
           <label>Region:</label>
-          <input type="text" disabled value={country.region} />
+          <input type="text" readOnly value={country.region} />
           <label>Subregion:</label>
-          <input type="text" disabled value={country.subregion} />
+          <input type="text" readOnly value={country.subregion} />
           <label>Languages:</label>
           <input
             type="text"
-            disabled
+            readOnly
             value={this.showLanguages(country.languages)}
           />
         </div>
