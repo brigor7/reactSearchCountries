@@ -7,6 +7,7 @@ export default class App extends Component {
 
     this.state = {
       allCountries: [],
+      filteredCountries: [],
     };
   }
   async componentDidMount() {
@@ -29,11 +30,23 @@ export default class App extends Component {
 
     this.setState({
       allCountries,
+      filteredCountries: allCountries,
     });
   }
 
-  render() {
+  handleChangeInput = (event) => {
     const { allCountries } = this.state;
+    const digtCountry = event.target.value.toLowerCase();
+    const filteredCountries = allCountries.filter((country) => {
+      return country.name.toLowerCase().includes(digtCountry);
+    });
+    this.setState({
+      filteredCountries,
+    });
+  };
+
+  render() {
+    const { allCountries, filteredCountries } = this.state;
     return (
       <div className="container">
         <div class="row">
@@ -41,12 +54,16 @@ export default class App extends Component {
         </div>
         <div className="row">
           <label for="nameCountry">Country´s name:</label>
-          <input type="text" id="nameCountry" />
+          <input
+            type="text"
+            id="nameCountry"
+            onChange={this.handleChangeInput}
+          />
         </div>
         <div className="row">
           <div className="col s5">
             <h4>List of Countries</h4>
-            <Countries countries={allCountries} />
+            <Countries countries={filteredCountries} />
           </div>
           <div className="col s7">
             <h4>Details of Country</h4>
