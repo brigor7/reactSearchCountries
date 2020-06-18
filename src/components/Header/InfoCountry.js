@@ -49,7 +49,7 @@ export default class InfoCountry extends Component {
               <label>Region:</label>
               <input type="text" readOnly value={country.region} />
             </div>
-            <div className="col s12 m6">
+            <div className="col s6">
               <label>Subregion:</label>
               <input type="text" readOnly value={country.subregion} />
             </div>
