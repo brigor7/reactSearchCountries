@@ -14,19 +14,17 @@ export default class App extends Component {
 
     const allCountries = json.map((country) => {
       return {
+        id: country.numericCode,
         name: country.name,
         namePT: country.translations.pt,
+        flag: country.flag,
         capital: country.capital,
         population: country.population,
-        id: country.numericCode,
         region: country.region,
         subregion: country.subregion,
-        flag: country.flag,
         languages: country.languages,
       };
     });
-
-    console.log(allCountries);
 
     this.setState({
       allCountries,
@@ -34,12 +32,14 @@ export default class App extends Component {
   }
 
   render() {
+    const { allCountries } = this.state;
     return (
-      <div>
-        <div>Search of Countries</div>
+      <div className="container">
+        <h3>Search of Countries</h3>
         <ul>
-          <li>Teste</li>
-          <li>Teste2</li>
+          {allCountries.map((country) => {
+            return <li key={country.id}>{country.namePT}</li>;
+          })}
         </ul>
       </div>
     );
