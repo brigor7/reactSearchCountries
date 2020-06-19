@@ -14,6 +14,7 @@ export default class Header extends Component {
           type="text"
           id="nameCountry"
           value={filter}
+          autofocus="true"
           onChange={this.handleInputChange}
         />
       </div>
