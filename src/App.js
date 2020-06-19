@@ -52,10 +52,10 @@ export default class App extends Component {
 
   handleClick = (event) => {
     const { allCountries } = this.state;
-    const filteredCountries = allCountries.filter((country) => {
+    const filteredCountry = allCountries.filter((country) => {
       return country.id === event.target.id;
     });
-    this.setState({ filteredCountries });
+    this.setState({ filteredCountry });
   };
 
   render() {
@@ -76,7 +76,7 @@ export default class App extends Component {
             />
           </div>
           <div className="col s12 m7">
-            <InfoCountry filter={filteredCountries} />
+            <InfoCountry filter={filteredCountry} />
           </div>
         </div>
       </div>
