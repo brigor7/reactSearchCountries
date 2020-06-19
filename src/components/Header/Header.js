@@ -6,7 +6,7 @@ export default class Header extends Component {
   };
 
   render() {
-    const { filter } = this.props;
+    const { filter, focus } = this.props;
     return (
       <div className="row">
         <label>Country´s name:</label>
@@ -14,7 +14,7 @@ export default class Header extends Component {
           type="text"
           id="nameCountry"
           value={filter}
-          autofocus="true"
+          autofocus={focus}
           onChange={this.handleInputChange}
         />
       </div>

@@ -62,7 +62,11 @@ export default class App extends Component {
     const { filter, filteredCountries, filteredCountry } = this.state;
     return (
       <div className="container">
-        <Header filter={filter} onChangeFilter={this.handleChangeFilter} />
+        <Header
+          filter={filter}
+          focus="true"
+          onChangeFilter={this.handleChangeFilter}
+        />
         <div className="row">
           <div className="col s12 m5">
             <h4>List of Countries</h4>
